@@ -1,0 +1,46 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript" th:src="@{/js/book/edit/bookEditApi.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/edit/bookEditUi.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/navbar.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/bookInput.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/popupAlert.js}"></script>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Update Booking</title>
+        <link href="../static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
+        <link href="../static/css/book.css" th:href="@{/css/book.css}" rel="stylesheet" />
+        <link href="../static/css/bookInput.css" th:href="@{/css/bookInput.css}" rel="stylesheet" />
+        <link href="../static/css/popup.css" th:href="@{/css/popup.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Insert Navbar component from navbar.html -->
+        <div th:insert="navbar :: navbar"></div>
+
+        <h1 class="">Find & Edit Book</h1>
+
+        <!-- Insert Popop Component -->
+        <div th:insert="popupAlert :: popupAlert"></div>
+
+        
+        <div>
+            <!-- Insert Book input table -->
+            <div th:insert="bookInput :: bookInput"></div>
+            <!-- Extra Book Status Display -->
+            <table>
+                <tr>
+                    <th>Status:</th>
+                    <th id="update-bookStatus">N/A</th>
+                </tr>
+            </table>
+
+            <!-- Buttons for Get & Edit actions -->
+            <button class="book-btn" type="button" onClick="getBook()">Get By ISBN</button>
+            <button class="book-btn" type="button" onClick="deleteBook()" id="delete-book-button" disabled>Delete</button>
+            <button class="book-btn" type="button" onClick="updateBook()" id="update-book-button" disabled>Update</button>
+            <button class="book-btn" type="button" onClick="takeBook()" id="update-status-button" disabled >Borrow Book</button>
+
+        </div>
+    </body>
+</html>

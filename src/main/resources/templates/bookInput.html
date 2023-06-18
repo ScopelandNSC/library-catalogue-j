@@ -1,0 +1,41 @@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    </head>
+    <body>
+        <!-- A table with a row for each input and a row for a text field for validation -->
+        <table class="book-input-table" th:fragment="bookInput">
+            <tr class="book-input-row">
+                <th class="book-input-column">ISBN:</th>
+                <th class="book-input-column">
+                    <input type = "text"  name = "isbn" id="input-isbn"/>
+                </th>
+            </tr>
+            <tr class="book-input-row book-input-error" id="error-isbn">
+            </tr>
+            <tr class="book-input-row">
+                <th class="book-input-column">Author:</th>
+                <th class="book-input-column">
+                    <input type = "text"  name = "author" id="input-author"/>
+                </th>
+            </tr>
+            <tr class="book-input-row book-input-error" id="error-author"></tr>
+            <tr class="book-input-row">
+                <th class="book-input-column">Title:</th>
+                <th class="book-input-column">
+                    <input type = "text" name = "title" id="input-title"/>
+                </th>
+            </tr>
+            <tr class="book-input-row book-input-error" id="error-title"></tr>
+            <tr class="book-input-row">
+                <th class="book-input-column">Publication Year:</th>
+                <th class="book-input-column">
+                    <input type = "number" name = "publicationYear" id="input-publicationYear"/>
+                </th>
+            </tr>
+            <tr class="book-input-row book-input-error" id="error-publicationYear"></tr>
+        </table>
+    </body>
+</html>

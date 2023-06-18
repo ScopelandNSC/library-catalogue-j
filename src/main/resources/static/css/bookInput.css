@@ -1,0 +1,21 @@
+/* Book Input Form CSS */
+.book-input-table{
+  display: flex;
+}
+
+.book-input-row{
+    display: flex;
+}
+
+.book-input-column{
+    display: flex;
+    flex: 1;
+    text-align: left;
+}
+
+.book-input-error{
+    color:red;
+    font-size: small;
+    justify-content: flex-end;
+    margin-bottom:5px;
+}

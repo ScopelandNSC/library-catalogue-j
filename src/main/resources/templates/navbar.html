@@ -1,0 +1,15 @@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    </head>
+    <body>
+        <div class="tab" th:fragment="navbar">
+            <button onclick="movePage('/')">Home</button>
+            <button onClick="movePage('/addBook')" >Add Book</button>
+            <button onClick="movePage('/editBook')" >Edit Book</button>
+            <button class="auth-button" onClick="movePage('/logout')" >Logout</button>
+        </div>
+    </body>
+</html>

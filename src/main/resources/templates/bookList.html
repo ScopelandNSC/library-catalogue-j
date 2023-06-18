@@ -1,0 +1,63 @@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript" th:src="@{/js/book/list/bookListApi.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/list/bookListUi.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/navbar.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/popupAlert.js}"></script>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home Page</title>
+        <link href="../static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
+        <link href="../static/css/book.css" th:href="@{/css/book.css}" rel="stylesheet" />
+        <link href="../static/css/popup.css" th:href="@{/css/popup.css}" rel="stylesheet" />
+    </head>
+    <!-- Onload get a list of all books -->
+    <body onload="listBooks()">
+        <!-- Insert Navbar component from navbar.html -->
+        <div th:insert="navbar :: navbar"></div>
+
+        <h1 class="">Book Catalogue</h1>
+
+        <!-- Insert Popop Component -->
+        <div th:insert="popupAlert :: popupAlert"></div>
+
+        <!-- Search UI -->
+        <table >
+            <tr>
+                <th class="search-title">Author:</th>
+                <th>
+                    <input type = "text"  name = "search-author" id="search-author"/>
+                </th>
+                <th></th>
+                <th>
+                    <button class="book-btn" onClick="searchAuthor()">
+                        Search Author
+                    </button>
+                </th>
+                <th><span class="search-input-error" id="error-search-author"></span></th>
+            </tr>
+            <tr>
+                <th class="search-title">Publication Range:</th>
+                <th><input type = "number"  name = "search-year-start" id="search-year-start"/></th>
+                <th><input type = "number"  name = "search-year-end" id="search-year-end"/></th>
+                <th>
+                    <button class="book-btn" onClick="searchPublicationYearRange()">
+                        Search Years
+                    </button>
+                    
+                </th>
+                <th><span class="search-input-error" id="error-search-year"></span></th>
+            </tr>    
+        </table>
+
+        <!-- A button to reset the search and just show all books-->
+        <button class="book-btn" onClick="listBooks()">
+            Reset View
+        </button>
+
+        <!-- A table with an id that we can insert books to for displaying-->
+        <table class="book-list" id="books"></table>
+    </body>
+</html>

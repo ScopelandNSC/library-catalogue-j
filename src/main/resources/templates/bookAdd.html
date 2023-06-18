@@ -1,0 +1,32 @@
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript" th:src="@{/js/book/add/bookAddApi.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/navbar.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/bookInput.js}"></script>
+<script type="text/javascript" th:src="@{/js/book/shared/popupAlert.js}"></script>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add Booking</title>
+        <link href="../static/css/navbar.css" th:href="@{/css/navbar.css}" rel="stylesheet" />
+        <link href="../static/css/book.css" th:href="@{/css/book.css}" rel="stylesheet" />
+        <link href="../static/css/bookInput.css" th:href="@{/css/bookInput.css}" rel="stylesheet" />
+        <link href="../static/css/popup.css" th:href="@{/css/popup.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Insert Navbar component from navbar.html -->
+        <div th:insert="navbar :: navbar"></div>
+        
+        <h1 class="">Add Book</h1>
+
+        <!-- Insert Popop Component -->
+        <div th:insert="popupAlert :: popupAlert"></div>
+
+        <!-- Insert Book input table -->
+        <div th:insert="bookInput :: bookInput"></div>
+         
+        <!-- Buttons for Add actions -->
+        <button class="book-btn" type="button" onClick="addBook()">Add Book</button>
+    </body>
+</html>
