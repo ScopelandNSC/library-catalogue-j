@@ -19,6 +19,7 @@ You can access it via `localhost:8080` in your web browser.
 This will take you to the login page.
 
 First from here you must register:
+
 ![Login Page Register Link](./docs/images/login-page-register-link.png))
 
 From here you can register, which redirects you to the login page.
@@ -49,4 +50,4 @@ What you can do here:
 
 ## Additional Docs:
 
-- [Project Summary](.docs/markdown/project-summary.md)
+- [Project Summary](./docs/markdown/project-summary.md)
